@@ -1,0 +1,22 @@
+{
+  "name": "clubes-do-bem",
+  "version": "1.0.0",
+  "description": "Sistema de beneficios solidarios - busca de ofertas e brindes",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "ofertas",
+    "brindes",
+    "beneficios",
+    "solidario"
+  ],
+  "author": "pompeu1993",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pompeu1993/clubesdobem.git"
+  }
+} 
