@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Ofertas - Clubes do Bem</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="brand">
+                    <div class="brand-icon icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L9 7V9H21ZM9 21C9 19.9 9.9 19 11 19S13 19.9 13 21 12.1 23 11 23 9 22.1 9 21ZM17 19C18.1 19 19 19.9 19 21S18.1 23 17 23 15 22.1 15 21 15.9 19 17 19ZM6 16H18V18H6V16ZM6 13H18V15H6V13ZM6 10H18V12H6V10Z"/>
+                        </svg>
+                    </div>
+                    <span class="brand-text">Clubes do Bem</span>
+                </div>
+                
+                <nav class="navigation">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="index.html#featured-offers" class="nav-link active">Ofertas</a>
+                    <a href="index.html#featured-gifts" class="nav-link">Brindes</a>
+                    <a href="#" class="nav-link">Causas Sociais</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Buscar cupons e ofertas" class="search-input" id="headerSearch">
+                        <span class="search-icon icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <button class="login-btn">
+                        <span>Entrar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Page Content -->
+    <main class="search-page">
+        <div class="container">
+            <!-- Search Header -->
+            <div class="search-header">
+                <h1 class="search-title">Buscar Ofertas</h1>
+                <p class="search-description">Encontre as melhores ofertas e descontos próximos a você</p>
+            </div>
+
+            <!-- Advanced Search -->
+            <div class="search-section">
+                <div class="search-main">
+                    <div class="search-input-container">
+                        <input type="text" id="mainSearch" placeholder="Digite o que você procura..." class="main-search-input">
+                        <button class="search-btn">
+                            <span class="search-icon icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </span>
+                            <span>Buscar</span>
+                        </button>
+                    </div>
+
+                    <!-- Modern Filters Inline -->
+                    <div class="inline-filters">
+                        <!-- Add Filter Button -->
+                        <div class="filter-popover" id="filterPopover">
+                            <button class="add-filter-btn" id="addFilterBtn">
+                                <span class="filter-icon icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/>
+                                    </svg>
+                                </span>
+                                <span class="filter-text">Filtros</span>
+                            </button>
+                            
+                            <!-- Filter Dropdown -->
+                            <div class="filter-dropdown" id="filterDropdown">
+                                <div class="filter-command">
+                                    <div class="command-input-container">
+                                        <input type="text" class="command-input" id="commandInput" placeholder="Buscar filtros...">
+                                    </div>
+                                    
+                                    <div class="command-content" id="commandContent">
+                                        <!-- Filter type selection -->
+                                        <div class="command-group" id="filterTypeGroup">
+                                            <div class="command-label">Tipo de Filtro</div>
+                                            <div class="command-item" data-filter-type="category">
+                                                <span class="command-icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Categoria</span>
+                                            </div>
+                                            <div class="command-item" data-filter-type="location">
+                                                <span class="command-icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Localização</span>
+                                            </div>
+                                            <div class="command-item" data-filter-type="distance">
+                                                <span class="command-icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Distância</span>
+                                            </div>
+                                            <div class="command-item" data-filter-type="discount">
+                                                <span class="command-icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <path d="M12.79 21L3 11.21v2c0 .45.54.67.85.35l8.79-8.79c.78-.78.78-2.05 0-2.83L12.21 2H5c-.55 0-1 .45-1 1v6.21l9.79 9.79c.78.78 2.05.78 2.83 0l6.21-6.21c.78-.78.78-2.05 0-2.83z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Desconto</span>
+                                            </div>
+                                            <div class="command-item" data-filter-type="rating">
+                                                <span class="command-icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Avaliação</span>
+                                            </div>
+                                            <div class="command-item" data-filter-type="cause">
+                                                <span class="command-icon">
+                                                    <svg viewBox="0 0 24 24">
+                                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                                    </svg>
+                                                </span>
+                                                <span>Causa Social</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Filter value selection (hidden by default) -->
+                                        <div class="command-group" id="filterValueGroup" style="display: none;">
+                                            <div class="command-label" id="valueGroupLabel">Selecionar Valor</div>
+                                            <div id="filterValueOptions">
+                                                <!-- Options will be populated dynamically -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Filters Row -->
+                <div class="active-filters-row">
+                    <div class="active-filters-chips" id="activeFiltersChips">
+                        <!-- Active filter chips will be dynamically added here -->
+                    </div>
+                    
+                    <!-- Clear All Button -->
+                    <button class="clear-all-btn" id="clearAllBtn" style="display: none;">
+                        <span>Limpar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results">
+                <div class="results-header">
+                    <div class="results-info">
+                        <h2 class="results-title">Resultados da busca</h2>
+                        <p class="results-count" id="resultsCount">Encontramos <strong>24 ofertas</strong> para você</p>
+                    </div>
+                    <div class="results-controls">
+                        <!-- Location Indicator -->
+                        <div class="search-location-indicator">
+                            <span class="location-indicator">
+                                <span class="gps-icon icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0 0 13 3.06V1h-2v2.06A8.994 8.994 0 0 0 3.06 11H1v2h2.06A8.994 8.994 0 0 0 11 20.94V23h2v-2.06A8.994 8.994 0 0 0 20.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+                                    </svg>
+                                </span>
+                                <span class="location-text">Resultados próximos</span>
+                            </span>
+                        </div>
+                        <div class="sort-options">
+                            <label for="sortSelect">Ordenar por:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="relevance">Mais relevantes</option>
+                                <option value="discount">Maior desconto</option>
+                                <option value="rating">Melhor avaliação</option>
+                                <option value="distance">Mais próximos</option>
+                                <option value="newest">Mais recentes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Results Grid -->
+                <div class="results-grid" id="resultsGrid">
+                    <!-- Sample offers will be loaded here by JavaScript -->
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more-section">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <span>Carregar mais ofertas</span>
+                        <span class="arrow-icon icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <div class="brand-icon icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L9 7V9H21ZM9 21C9 19.9 9.9 19 11 19S13 19.9 13 21 12.1 23 11 23 9 22.1 9 21ZM17 19C18.1 19 19 19.9 19 21S18.1 23 17 23 15 22.1 15 21 15.9 19 17 19ZM6 16H18V18H6V16ZM6 13H18V15H6V13ZM6 10H18V12H6V10Z"/>
+                            </svg>
+                        </div>
+                        <span class="brand-text">Clubes do Bem</span>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <div class="footer-main-links">
+                        <a href="index.html#featured-offers" class="footer-link">Ofertas</a>
+                        <a href="index.html#featured-gifts" class="footer-link">Brindes</a>
+                        <a href="#" class="footer-link">Causas Sociais</a>
+                        <a href="index.html#how-it-works" class="footer-link">Como Funciona</a>
+                    </div>
+                    
+                    <div class="footer-legal-links">
+                        <a href="#" class="footer-link">Privacidade</a>
+                        <a href="#" class="footer-link">Termos</a>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <div class="social-links">
+                        <a href="#" class="social-icon icon" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <span>© 2024 Clubes do Bem</span>
+                    <span>Todos os direitos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html> 
